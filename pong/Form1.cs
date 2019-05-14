@@ -63,23 +63,7 @@ namespace pong
             ball.Top -= bally; //Assign the ball TOP to ball Y integer
             ball.Left -= ballx; //Assign the ball LEFT to ball X integer
 
-            CPU.Top += speed; //Assignment the CPU top speed integer
-
-            if (score < 5)
-            {
-                //If CPU has reached the top or gone to the bottom of the screen
-                if (CPU.Top < 0 || CPU.Top > 455)
-                {
-                    //Change the direction
-                    speed = -speed;
-                }
-            }
-            else
-            {
-                //If the score is greater than 5 make the game more difficult
-                //By allowing the CPU to follow the ball so it does not miss
-                CPU.Top = ball.Top + 30;
-            }
+            cpuMove();
 
             //If the ball has gone passed the player through the left
             if (ball.Left < 0)
@@ -139,6 +123,27 @@ namespace pong
             {
                 GameTimer.Stop();
                 MessageBox.Show("CPU wins, try again");
+            }
+        }
+        private void cpuMove()
+        {
+            CPU.Top += speed; //Assignment the CPU top speed integer
+
+
+            if (score < 5)
+            {
+            //If CPU has reached the top or gone to the bottom of the screen
+                if (CPU.Top < 0 || CPU.Top > 455)
+                {
+                //Change the direction
+                speed = -speed;
+                }
+            }
+            else
+            {
+            //If the score is greater than 5 make the game more difficult
+            //By allowing the CPU to follow the ball so it does not miss
+            CPU.Top = ball.Top + 30;
             }
         }
     }
