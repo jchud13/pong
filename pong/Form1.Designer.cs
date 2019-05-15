@@ -42,29 +42,29 @@
             // 
             // CPU
             // 
-            this.CPU.BackColor = System.Drawing.Color.Fuchsia;
+            this.CPU.BackColor = System.Drawing.Color.GhostWhite;
             this.CPU.Location = new System.Drawing.Point(897, 230);
             this.CPU.Name = "CPU";
-            this.CPU.Size = new System.Drawing.Size(27, 127);
+            this.CPU.Size = new System.Drawing.Size(15, 127);
             this.CPU.TabIndex = 1;
             this.CPU.TabStop = false;
             this.CPU.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
-            // Ball
+            // ball
             // 
             this.ball.BackColor = System.Drawing.Color.White;
             this.ball.Location = new System.Drawing.Point(434, 239);
-            this.ball.Name = "Ball";
+            this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(27, 26);
             this.ball.TabIndex = 2;
             this.ball.TabStop = false;
             // 
             // Player1
             // 
-            this.Player1.BackColor = System.Drawing.Color.Yellow;
+            this.Player1.BackColor = System.Drawing.Color.FloralWhite;
             this.Player1.Location = new System.Drawing.Point(12, 186);
             this.Player1.Name = "Player1";
-            this.Player1.Size = new System.Drawing.Size(27, 127);
+            this.Player1.Size = new System.Drawing.Size(15, 127);
             this.Player1.TabIndex = 3;
             this.Player1.TabStop = false;
             // 
@@ -78,7 +78,7 @@
             // 
             this.PlayerScore.AutoSize = true;
             this.PlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayerScore.ForeColor = System.Drawing.Color.Lime;
+            this.PlayerScore.ForeColor = System.Drawing.Color.FloralWhite;
             this.PlayerScore.Location = new System.Drawing.Point(105, 9);
             this.PlayerScore.Name = "PlayerScore";
             this.PlayerScore.Size = new System.Drawing.Size(38, 25);
@@ -89,7 +89,7 @@
             // 
             this.CPUScore.AutoSize = true;
             this.CPUScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPUScore.ForeColor = System.Drawing.Color.Red;
+            this.CPUScore.ForeColor = System.Drawing.Color.GhostWhite;
             this.CPUScore.Location = new System.Drawing.Point(735, 9);
             this.CPUScore.Name = "CPUScore";
             this.CPUScore.Size = new System.Drawing.Size(38, 25);
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(928, 575);
             this.Controls.Add(this.CPUScore);
             this.Controls.Add(this.PlayerScore);

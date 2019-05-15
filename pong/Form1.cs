@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,11 +15,13 @@ namespace pong
     {
         bool goup; //Boolean used to detect player up position 
         bool godown; //Boolean used to detect player down position
-        int speed = 5;
-        int ballx = 5; //Horizontal X speed value for the ball
-        int bally = 5; //Vertical Y speed value for the ball
+        int speed = 6;
+        int ballx = 6; //Horizontal X speed value for the ball
+        int bally = 6; //Vertical Y speed value for the ball
         int score = 0;
         int cpupoint = 0;
+        SoundPlayer playerSound = new SoundPlayer(@"C:\Users\Jared\source\repos\pong\pong\sounds\player.wav");
+        SoundPlayer computerSound = new SoundPlayer(@"C:\Users\Jared\source\repos\pong\pong\sounds\computer.wav");
         public Form1()
         {
 
@@ -92,10 +95,17 @@ namespace pong
             }
 
             //If the ball hits the player or the CPU
-            if(ball.Bounds.IntersectsWith(Player1.Bounds) || ball.Bounds.IntersectsWith(CPU.Bounds))
+            if(ball.Bounds.IntersectsWith(Player1.Bounds))
             {
                 //Then bounce the ball in the other direction
                 ballx = -ballx;
+                playerSound.Play();
+            }
+
+            if (ball.Bounds.IntersectsWith(CPU.Bounds))
+            {
+                ballx = -ballx;
+                computerSound.Play();
             }
 
             //Controlling the player
@@ -127,13 +137,11 @@ namespace pong
         }
         private void cpuMove()
         {
-        //    CPU.Top += speed; //Assignment the CPU top speed integer
-
-            if(CPU.Top < ball.Top - 30)
+            if (CPU.Top < ball.Top - 30)
             {
                 CPU.Top += speed;
             }
-            else if(CPU.Top > ball.Top + 30)
+            else if (CPU.Top > ball.Top + 30)
             {
                 CPU.Top -= speed;
             }
