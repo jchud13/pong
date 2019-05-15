@@ -127,23 +127,15 @@ namespace pong
         }
         private void cpuMove()
         {
-            CPU.Top += speed; //Assignment the CPU top speed integer
+        //    CPU.Top += speed; //Assignment the CPU top speed integer
 
-
-            if (score < 5)
+            if(CPU.Top < ball.Top - 30)
             {
-            //If CPU has reached the top or gone to the bottom of the screen
-                if (CPU.Top < 0 || CPU.Top > 455)
-                {
-                //Change the direction
-                speed = -speed;
-                }
+                CPU.Top += speed;
             }
-            else
+            else if(CPU.Top > ball.Top + 30)
             {
-            //If the score is greater than 5 make the game more difficult
-            //By allowing the CPU to follow the ball so it does not miss
-            CPU.Top = ball.Top + 30;
+                CPU.Top -= speed;
             }
         }
     }
