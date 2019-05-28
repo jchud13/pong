@@ -46,10 +46,11 @@ namespace pong
                 if (index != System.Windows.Forms.ListBox.NoMatches)
                 {
 
-                 //   Application.Restart();
-
-                    Application.Run(new Form1());
-                    Application.Restart();
+                    //   Application.Restart();
+                    this.Hide();
+                    Form1 form1 = new Form1();
+               //     Application.Run(new Form1());
+                    form1.Show();
                     //Form1 = new Form1;
                 }
             }
