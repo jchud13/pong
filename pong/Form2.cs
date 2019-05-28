@@ -17,45 +17,17 @@ namespace pong
             InitializeComponent();
         }
 
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Playclick(object sender, MouseEventArgs e)
         {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+            Application.Exit();
         }
 
-        private void keyisdown(object sender, KeyEventArgs e)
+        private void Quitclick(object sender, MouseEventArgs e)
         {
-            if(e.KeyCode == Keys.Up)
-            {
-                //send cursor up
-            }
-            else
-            {
-                //send cursor down
-            }
-        }
-
-        private void keyisup(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void mouseisdown(object sender, MouseEventArgs e)
-        {
-            int index = this.listBox1.IndexFromPoint(e.Location);
-            try
-            {
-                if (index != System.Windows.Forms.ListBox.NoMatches)
-                {
-
-                    //   Application.Restart();
-                    this.Hide();
-                    Form1 form1 = new Form1();
-               //     Application.Run(new Form1());
-                    form1.Show();
-                    //Form1 = new Form1;
-                }
-            }
-            catch(Exception ex) { }
-
+            Application.Exit();
         }
     }
 }

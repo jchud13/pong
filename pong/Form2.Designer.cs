@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -45,25 +46,45 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Pong";
             // 
-            // listBox1
+            // button1
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Black;
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 33;
-            this.listBox1.Items.AddRange(new object[] {
-            "Play",
-            "Quit"});
-            this.listBox1.Location = new System.Drawing.Point(303, 288);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(245, 99);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
-            this.listBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyisdown);
-            this.listBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyisup);
-            this.listBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseisdown);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(303, 288);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 45);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Play";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Playclick);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(303, 339);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(182, 36);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Quit";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Quitclick);
             // 
             // Form2
             // 
@@ -71,8 +92,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Name = "Form2";
             this.Text = "Pong";
             this.TopMost = true;
@@ -84,6 +106,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
