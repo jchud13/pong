@@ -9,7 +9,7 @@ Goals:
 
 Updated CPU (with adequate difficulty level)
 
-2 player mode
+2 player mode ##Complete!!
 
 Title screen with options for 1 or 2 players **Complete!!
 
