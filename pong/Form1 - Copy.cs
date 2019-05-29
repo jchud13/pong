@@ -11,18 +11,19 @@ using System.Windows.Forms;
 
 namespace pong
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
         bool goup; //Boolean used to detect player up position 
         bool godown; //Boolean used to detect player down position
-        int speed = 6;
+        bool p2goup;
+        bool p2godown;
         int ballx = 6; //Horizontal X speed value for the ball
         int bally = 6; //Vertical Y speed value for the ball
         int score = 0;
         int cpupoint = 0;
         SoundPlayer playerSound = new SoundPlayer(@"C:\Users\Jared\source\repos\pong\pong\sounds\player.wav");
         SoundPlayer computerSound = new SoundPlayer(@"C:\Users\Jared\source\repos\pong\pong\sounds\computer.wav");
-        public Form1()
+        public Form3()
         {
 
             InitializeComponent();
@@ -34,13 +35,21 @@ namespace pong
 
         private void keyisdown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up)
+            if(e.KeyCode == Keys.Up)
             {
                 goup = true;
             }
-            if (e.KeyCode == Keys.Down)
+            if(e.KeyCode == Keys.Down)
             {
                 godown = true;
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                p2goup = true;
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                p2godown = true;
             }
         }
 
@@ -54,6 +63,14 @@ namespace pong
             {
                 godown = false;
             }
+            if (e.KeyCode == Keys.W)
+            {
+                p2goup = false;
+            }
+            if (e.KeyCode == Keys.S)
+            {
+                p2godown = false;
+            }
         }
 
         private void timerTick(object sender, EventArgs e)
@@ -64,8 +81,6 @@ namespace pong
 
             ball.Top -= bally; //Assign the ball TOP to ball Y integer
             ball.Left -= ballx; //Assign the ball LEFT to ball X integer
-
-            cpuMove();
 
             //If the ball has gone passed the player through the left
             if (ball.Left < 0)
@@ -122,6 +137,15 @@ namespace pong
                 Player1.Top += 8;
             }
 
+            if(p2goup == true && CPU.Top > 0){
+                CPU.Top -= 8;
+            }
+
+            if(p2godown == true && CPU.Top < 455)
+            {
+                CPU.Top += 8;
+            }
+
             if(score > 10)
             {
                 GameTimer.Stop();
@@ -132,17 +156,6 @@ namespace pong
             {
                 GameTimer.Stop();
                 MessageBox.Show("CPU wins, try again");
-            }
-        }
-        private void cpuMove()
-        {
-            if (CPU.Top < ball.Top - 30)
-            {
-                CPU.Top += speed;
-            }
-            else if (CPU.Top > ball.Top + 30)
-            {
-                CPU.Top -= speed;
             }
         }
     }

@@ -29,5 +29,13 @@ namespace pong
         {
             Application.Exit();
         }
+
+        private void TwoClick(object sender, MouseEventArgs e)
+        {
+            this.Hide();
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+            Application.Exit();
+        }
     }
 }
