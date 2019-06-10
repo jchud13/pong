@@ -14,6 +14,8 @@ Updated CPU (with adequate difficulty level)
 Title screen with options for 1 or 2 players **Complete!!
 
 .exe or other kind of executable so my friends can download and play it. 
+**Check out my release.zip folder!
+
 2 players over a server
 
 I do not know how feasible these goals are as this is my first major 
