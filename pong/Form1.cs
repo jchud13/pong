@@ -20,8 +20,8 @@ namespace pong
         int bally = 6; //Vertical Y speed value for the ball
         int score = 0;
         int cpupoint = 0;
-        SoundPlayer playerSound = new SoundPlayer(@"C:\Users\Jared\source\repos\pong\pong\bin\Release\player.wav");
-        SoundPlayer computerSound = new SoundPlayer(@"C:\Users\Jared\source\repos\pong\pong\bin\Release\computer.wav");
+        SoundPlayer playerSound = new SoundPlayer(@".\player.wav");
+        SoundPlayer computerSound = new SoundPlayer(@".\computer.wav");
         public Form1()
         {
 
